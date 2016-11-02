@@ -1,24 +1,48 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>WebGL Earth</title>
-	<style>
-		body { margin: 0; overflow: hidden; background-color: #000; }
-		.tm  { position: absolute; top: 10px; right: 10px; }
-		.webgl-error { font: 15px/30px monospace; text-align: center; color: #fff; margin: 50px; }
-		.webgl-error a { color: #fff; }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebGL Earth</title>
+  <style>
+    body { margin: 0; overflow: hidden; background-color: #000; }
+    .tm  { position: absolute; top: 10px; right: 10px; }
+    .webgl-error { font: 15px/30px monospace; text-align: center; color: #fff; margin: 50px; }
+    .webgl-error a { color: #fff; }
     </style>
 </head>
 <body>
-	<div id="webgl"></div>
-	<a href="http://thematicmapping.org/" class="tm">
-		<img src="http://earthatlas.info/img/thematicmapping.png">
-	</a>
-	<script src="js/three.min.js"></script>
-	<script src="js/Detector.js"></script>		
-	<script src="js/TrackballControls.js"></script>		
-	<script src="js/earth.js"></script>  
+  <div id="webgl"></div>
+  <a href="http://thematicmapping.org/" class="tm">
+    <img src="http://earthatlas.info/img/thematicmapping.png">
+  </a>
+  <script src="js/three.min.js"></script>
+  <script src="js/Detector.js"></script>    
+  <script src="js/TrackballControls.js"></script>    
+  <script src="js/earth.js"></script>  
+  <div style='color:white;position:absolute;top:0;left:0;'>
+    <label>
+      <input type=checkbox id=texture_box checked onchange="update_material();"/>
+      Texture Map<br>
+      <img style='width:150px;' src=images/2_no_clouds_4k.jpg />
+    </label><br>
+
+    <label>
+    <input type=checkbox id=bump_box checked onchange="update_material();"/>
+      Bump Map<br>
+      <img style='width:150px;' src=images/elev_bump_4k.jpg />
+    </label><br>
+    <label>
+    <input type=checkbox id=specular_box checked onchange="update_material();"/>
+      Specular Map<br>
+      <img style='width:150px;' src=images/water_4k.png />
+    </label><br>
+    <label>
+    <input type=checkbox id=wireframe_box onchange="update_material();"/>
+      Wireframe<br>
+      <img style='width:150px;' src=images/wireframe-cartoon.png />
+    </label>
+    <label>
+  </div>
 </body>
 </html>
